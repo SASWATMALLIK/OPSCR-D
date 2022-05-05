@@ -1,0 +1,42 @@
+<!-- <h1>TEST APP</h1>
+<button (click)="addNewtable()">AddTable</button>
+<button (click)="convertToHtml(content)">Convert</button>
+<quill-editor format="object" (onEditorCreated)="editorCreated($event)" (onContentChanged)="onEditorChanged($event)" [(ngModel)]="content" [modules]="modules"></quill-editor>
+<button (click)="replaceContent()">Replace</button> -->
+
+<!-- {{content|json}} -->
+<!-- {{quillContent}} -->
+<!-- <div  [innerHTML]="quillContent" style="width:100%">
+</div> -->
+<!-- <quill-view-html [content]="quillContent" theme="snow"></quill-view-html> -->
+
+<!-- <div class="col-md-12">
+    <h3>Section1</h3>
+    <app-demo-text-editor [htmlContent]="defaultHtml"></app-demo-text-editor>
+</div> -->
+<!-- <div class="col-md-12">
+    <h3>Section2</h3>
+    <app-demo-text-editor [htmlContent]="defaultHtml"></app-demo-text-editor>
+</div>
+<div class="col-md-12">
+    <h3>Section3</h3>
+    <app-demo-text-editor [htmlContent]="defaultHtml"></app-demo-text-editor>
+</div> -->
+<!-- <button (click)="convertToPdf()">PDF Generate</button> -->
+<!-- <app-demo-rule-builder></app-demo-rule-builder> -->
+
+
+<div class="container">
+    <h1>Reactive Dynamic Form Example</h1>
+    <hr/>
+  
+    <div class="row">
+      <div class="col-12">
+   <form [formGroup]="dynamicForm.formGroup">
+      <div viewMode="basic" [rxwebDynamicForm]="dynamicForm" [uiBindings]="uiBindings">
+      </div>
+      <button (click)="btnClick()" [disabled]="!dynamicForm.formGroup.valid" type="button" class="btn btn-primary">Submit</button>
+  </form>
+      </div>
+    </div>
+  </div>

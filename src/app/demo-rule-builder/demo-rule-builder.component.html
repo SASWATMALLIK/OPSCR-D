@@ -1,0 +1,26 @@
+<h3>Rule Builder</h3>
+<div class="row">
+    <div class="col-md-2">
+        <input type="text" [(ngModel)]="ruleName" placeholder="Rule Name">
+    </div>
+    <div class="col-md-2">
+        <input type="text" [(ngModel)]="successMessage" placeholder="Success Event">
+    </div>
+    <div class="col-md-2">
+        <input type="text" [(ngModel)]="errorMessage" placeholder="Error Message">
+    </div>
+    <div class="col-md-6">
+        <query-builder [allowCollapse]="true" [emptyMessage]="'FieldCantbeempty'" [(ngModel)]='query' [config]='config'>
+            <ng-container *queryRemoveButton="let rule; let removeRule=removeRule">
+                <button type="button" class="btn-primary" [ngClass]="{'disable-mandetoryRule display-none':rule.isMandatoryRule==true}" 
+                    (click)="removeRule(rule)">
+                    Delete
+                </button>
+            </ng-container>
+        </query-builder>
+    </div>
+</div>
+
+<button class="btn-primary" (click)="convertToMicrosoftRuleBuilderQuery()">Convert To Microsoft Rule Builder
+    Query</button>
+<!-- {{query|json}} -->

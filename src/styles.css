@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+.custom-preview
+{
+    border: 2px solid #ccc;
+    margin-top: 20px;
+}
+
+ /* li:has(.q-button-group + .disable-mandetoryRule) input
+ {
+    pointer-events: none !important;
+    background: #ccc !important;
+ } */
+
+ 
+ /* li .disable-mandetoryRule
+ {
+    background:red !important;
+ } */
+
+ .display-none
+ {
+     display: none;
+ }

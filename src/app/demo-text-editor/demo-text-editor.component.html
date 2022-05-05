@@ -1,0 +1,25 @@
+<div *ngIf="isToHideEditor==false">
+    <quill-editor format="html" [(ngModel)]="headerContent" [disabled]="true"></quill-editor>
+</div>
+<button (click)="addNewtable()">AddTable</button>
+<!-- <quill-editor></quill-editor> -->
+<div *ngIf="isToHideEditor==false">
+    <quill-editor #Editor format="html" (onEditorCreated)="editorCreated($event)" (onContentChanged)="onEditorChanged($event)" [(ngModel)]="content" [modules]="modules"></quill-editor>
+</div>
+<input type="text" [(ngModel)]="link" placeholder="Office link">
+<input type="number" [(ngModel)]="noOfPosts" placeholder="No of posts">
+<input type="text" [(ngModel)]="postInWords" placeholder="No of Posts in words">
+<input type="text" [(ngModel)]="Post" placeholder="POST NAME">
+<input type="text" [(ngModel)]="department" placeholder="DEPARTMENT NAME">
+<button (click)="previewContent()">Preview</button>
+<button (click)="cancelPrview()">CancelPreview</button>
+
+<!-- {{content|json}} -->
+<!-- {{quillContent}} -->
+<!-- <div  [innerHTML]="quillContent" style="width:100%">
+</div> -->
+<div class="custom-preview" *ngIf="isPreview==true">
+    <quill-view-html [content]="quillContent" theme="snow"></quill-view-html>
+</div>
+
+<button (click)="exportToPDF()">Save AS PDF</button>
