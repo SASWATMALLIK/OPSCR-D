@@ -15,13 +15,20 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { DemoFormlyComponent } from './demo-formly/demo-formly.component';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatepickerTypeComponent } from './type';
+import { RepeatTableTypeComponent, RepeatTypeComponent } from './repeat.type';
+import { AggregatePipe } from './aggregate.pipe';
+import { PanelWrapperComponent } from './panel-wrapper.component';
 @NgModule({
   declarations: [
     AppComponent,
     DemoTextEditorComponent,
     DemoRuleBuilderComponent,
     DemoFormlyComponent,
-    DatepickerTypeComponent
+    DatepickerTypeComponent,
+    RepeatTypeComponent,
+    RepeatTableTypeComponent,
+    AggregatePipe,
+    PanelWrapperComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,9 @@ import { DatepickerTypeComponent } from './type';
     BsDatepickerModule.forRoot(),
     DatepickerModule.forRoot() ,
     FormlyModule.forRoot({
+      wrappers: [
+        { name: 'panel', component: PanelWrapperComponent },
+      ],
       types: [{
 					name: 'datepicker',
 					component: DatepickerTypeComponent,
@@ -45,7 +55,9 @@ import { DatepickerTypeComponent } from './type';
 							datepickerOptions: {}
 						}
 					}
-				},]
+				},
+        { name: 'repeat', component: RepeatTypeComponent },
+      {name:'repeat-table',component:RepeatTableTypeComponent}]
     }),
     FormlyBootstrapModule
   ],

@@ -79,6 +79,125 @@ export class DemoFormlyComponent {
           ],
         },
       },
+      {
+        key: 'investments',
+        type: 'repeat-table',
+        templateOptions: {
+          addText: 'Add another investment',
+        },
+        fieldArray: {
+          fieldGroup: [
+            {
+              className: 'col-sm-4',
+              type: 'input',
+              key: 'Category',
+              name:'Category',
+              templateOptions: {
+                required: true,
+              },
+            },
+            {
+              type: 'input',
+              key: 'No_Of_Posts',
+              className: 'col-sm-4',
+              name:'No of Posts',
+              templateOptions: {
+                type: 'number'
+              },
+            },
+            {
+              type: 'input',
+              key: 'Women_Posts',
+              className: 'col-sm-4',
+              name:'No of Women Posts',
+              templateOptions: {
+                type: 'number'
+              },
+            }
+          ],
+        },
+      },
+      {
+        key: 'SecondTable',
+        type: 'repeat',
+        wrappers: ['panel'],
+        templateOptions: {
+          addText: 'Add UNivers Sub Category',
+          label:"Test Panel Lebel 1"
+        },
+        fieldArray: {
+          fieldGroup: [
+            {
+              className: 'col-sm-4',
+              type: 'input',
+              key: 'Category',
+              name:'Category',
+              templateOptions: {
+                required: true,
+              },
+            },
+            {
+              type: 'input',
+              key: 'No_Of_Posts',
+              className: 'col-sm-4',
+              name:'No of Posts',
+              templateOptions: {
+                type: 'number'
+              },
+            },
+            {
+              type: 'input',
+              key: 'Women_Posts',
+              className: 'col-sm-4',
+              name:'No of Women Posts',
+              templateOptions: {
+                type: 'number'
+              },
+            },
+            {
+              key: 'SecondTable',
+              type: 'repeat',
+              wrappers: ['panel'],
+              templateOptions: {
+                label:"Test Panel Lebel 2",
+                addText: 'Add UNivers Sub Category',
+              },
+              fieldArray: {
+                fieldGroup: [
+                  {
+                    className: 'col-sm-4',
+                    type: 'input',
+                    key: 'Category',
+                    name:'Category',
+                    templateOptions: {
+                      required: true,
+                    },
+                  },
+                  {
+                    type: 'input',
+                    key: 'No_Of_Posts',
+                    className: 'col-sm-4',
+                    name:'No of Posts',
+                    templateOptions: {
+                      type: 'number'
+                    },
+                  },
+                  {
+                    type: 'input',
+                    key: 'Women_Posts',
+                    className: 'col-sm-4',
+                    name:'No of Women Posts',
+                    templateOptions: {
+                      type: 'number'
+                    },
+                  },
+                  
+                ],
+              },
+            }
+          ],
+        },
+      }
   ];
   
     onSubmit(model) {
