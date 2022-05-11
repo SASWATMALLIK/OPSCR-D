@@ -6,8 +6,9 @@ import { FieldWrapper } from '@ngx-formly/core';
   template: `
     <div class="card">
       <h3 class="card-header">{{ to.label }}</h3>
-      <div class="card-body">
-        <ng-container #fieldComponent></ng-container>
+      <div class="card-body formly-repeater-card">
+        <ng-container #fieldComponent>
+        </ng-container>
       </div>
     </div>
   `,

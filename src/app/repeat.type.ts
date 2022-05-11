@@ -22,10 +22,7 @@ export class RepeatTypeComponent extends FieldArrayType {
 @Component({
   selector: 'formly-repeat-table-section',
   template: `
-  <div style="margin:30px 0;">
-  <button class="btn btn-primary" type="button" (click)="add()">{{ to.addText }}</button>
-</div>
-  <table class="table">
+  <table class="table table-bordered">
   <thead>
     <tr>
       <th *ngFor="let fieldDetail of field?.fieldArray?.fieldGroup; let i = index">
@@ -53,6 +50,9 @@ export class RepeatTypeComponent extends FieldArrayType {
     </tr>
   </tbody>
 </table>
+<div style="margin:30px 0;">
+  <button class="btn btn-primary" type="button" (click)="add()">{{ to.addText }}</button>
+</div>
 `
 })
 export class RepeatTableTypeComponent extends FieldArrayType {

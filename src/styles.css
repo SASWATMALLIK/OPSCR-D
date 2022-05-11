@@ -21,3 +21,10 @@
  {
      display: none;
  }
+
+ .formly-repeater-card .row
+ {
+    padding-top: 15px !important;
+    border-bottom: 2px solid #ccc !important ;
+    padding-bottom: 15px !important;
+ }
