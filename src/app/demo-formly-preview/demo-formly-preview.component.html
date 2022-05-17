@@ -1,0 +1,57 @@
+<div class="container" *ngIf="itemToPreview.fields">
+    <h6 class="text-center" style="font-weight:bold">REQUISITION FORM</h6>
+    <p>Requisition for appointment to the post of <strong>Assistant Agriculture Officer</strong>
+        for the department of <strong>Agriculture & Farmers' Empowerment</strong>
+    </p>
+    <div class="row" *ngFor="let fieldGroup of requisitionForm.fields; let index = index">
+        <div class="col-md-1">
+            {{index + 1}}.
+        </div>
+        <div class="col-md-11">
+            <ng-container *ngFor="let field of fieldGroup.fieldGroup; let alphabetIndex = index">
+                <div class="row" *ngIf="!field.fieldArray">
+                    <div class="col-md-6">
+                        <span>({{ alphabet[alphabetIndex] }})</span>
+                        {{field.templateOptions.label}}
+                    </div>
+                    <div class="col-md-6">
+                        <strong> - {{field.formControl.value}}</strong>
+                    </div>
+                </div>
+                <div class="row" *ngIf="field.fieldArray">
+                    <ng-container *ngIf="field.type == 'repeat-table'">
+                        <div class="col-md-12">
+                            <p>Details of the number of posts to be filled by direct recruitment:</p>
+                        </div>
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let header of field.fieldArray.fieldGroup">{{header.name}}</th>
+                                        <th>Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ng-container *ngFor="let item of field.fieldGroup; let i= index;">
+                                        <tr>
+                                            <ng-container *ngFor="let data of item.fieldGroup">
+                                                <td>{{data.formControl.value ? data.formControl.value : ''}}</td>
+                                            </ng-container>
+                                            <td *ngIf="i==0" [attr.rowspan]="field.fieldGroup.length + 1">Sample Remarks
+                                            </td>
+                                        </tr>
+                                    </ng-container>
+                                    <tr>
+                                        <td>Total:</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

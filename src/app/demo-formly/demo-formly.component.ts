@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
 
@@ -8,6 +8,8 @@ import { FormlyFieldConfig } from "@ngx-formly/core";
   //   styleUrls: ['./demo-text-editor.component.css']
 })
 export class DemoFormlyComponent {
+  @Output() onPreviewClick = new EventEmitter<object>();
+
   form = new FormGroup({});
   model = {};
   fields: FormlyFieldConfig[] = [
@@ -609,7 +611,8 @@ export class DemoFormlyComponent {
     console.log(model);
   }
   ConvertFormToPDFTemplete(model: any, fields: FormlyFieldConfig[]) {
-    console.log(model);
-    console.log(fields);
+    // console.log(model);
+    // console.log(fields);
+    this.onPreviewClick.emit({model, fields});
   }
 }

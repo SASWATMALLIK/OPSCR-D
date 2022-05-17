@@ -18,12 +18,14 @@ import { DatepickerTypeComponent } from './type';
 import { RepeatTableTypeComponent, RepeatTypeComponent } from './repeat.type';
 import { AggregatePipe } from './aggregate.pipe';
 import { PanelWrapperComponent } from './panel-wrapper.component';
+import { DemoFormlyPreviewComponent } from './demo-formly-preview/demo-formly-preview.component';
 @NgModule({
   declarations: [
     AppComponent,
     DemoTextEditorComponent,
     DemoRuleBuilderComponent,
     DemoFormlyComponent,
+    DemoFormlyPreviewComponent,
     DatepickerTypeComponent,
     RepeatTypeComponent,
     RepeatTableTypeComponent,
