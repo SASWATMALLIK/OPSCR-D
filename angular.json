@@ -34,7 +34,8 @@
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
             "scripts": [
-              "./node_modules/quill/dist/quill.min.js"            ]
+              "./node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,6 +128,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "richtext-editor"
+    }
+  },
+  "defaultProject": "richtext-editor",
+  "cli": {
+    "analytics": false
+  }
 }

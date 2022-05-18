@@ -41,6 +41,7 @@ export class AppComponent {
   blured = false
   focused = false
   modules = {}
+  requisitionFormPreviewModel : any = {};
   constructor(private dynamicFormBuilder:RxDynamicFormBuilder) {
     this.modules = {
       table: false, 
@@ -111,6 +112,10 @@ export class AppComponent {
     this.tableModule.insertTable(3, 3);
   }
 
+  onPreviewRequisitionForm(val: any){
+    console.log(val);
+    this.requisitionFormPreviewModel = val;
+  }
 
 
   title = 'richtext-editor';

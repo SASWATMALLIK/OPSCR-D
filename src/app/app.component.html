@@ -40,4 +40,5 @@
       </div>
     </div>
   </div> -->
-  <app-demo-formly></app-demo-formly>
+  <app-demo-formly (onPreviewClick)="onPreviewRequisitionForm($event)"></app-demo-formly>
+  <app-demo-formly-preview [itemToPreview]="requisitionFormPreviewModel"></app-demo-formly-preview>
